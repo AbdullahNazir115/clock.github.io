@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .clock{
+        background-color: rgba(16, 75, 201, 0.268);
+width: 337px;
+height: 323px;
+border-radius: 682px;
+border: 6px solid rgba(227, 15, 117, 0.597);
+        
+    }
+    .center{
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .left{
+        align-items: center;
+align-self: center;
+display: flex;
+justify-content: end;
+width: 268px;
+margin: 40px 0;
+    }
+    .single1{
+
+    }
+    .single2{
+        width: 17px;
+transform: translateX(287px);
+    }
+    .single3{
+        width: 33px;
+height: 23px;
+transform: translateX(294px);
+    }
+
+    .single4{
+        width: 30px;
+  transform: translateX(259px);
+}        
+    
+
+    .single5{
+        width: 20px;
+transform: translateX(228px);
+    }
+
+    .single6{
+        display: flex;
+justify-content: end;
+width: 170px;
+transform: translateY(17px);
+    }
+
+    .single7{
+        display: flex;
+justify-content: end;
+width: 55px;
+transform: translateY(50px)translateX(39px);    }
+
+    .single8{
+        display: flex;
+justify-content: end;
+width: 45px;
+transform: translateY(48px) translateX(-3px);
+    }
+
+    .single9{
+        display: flex;
+justify-content: end;
+width: 32px;
+transform: translateY(31px) translateX(2px);
+    }
+
+    .single10{
+       display: flex;
+justify-content: end;
+width: 44px;
+transform: translateY(17px) ; 
+    }
+
+    .single11{
+       display: flex;
+justify-content: end;
+width: 75px;
+transform: translateY(18px) translateX(15px); 
+    }
+
+
+    .single12{
+       display: flex;
+justify-content: end;
+width: 174px;
+transform: translateY(40px) ; 
+    }
+    .turn {
+  display: flex;
+  flex-direction: column-reverse;
+  transform: translateY(-388px);
+}
+  .turn p{
+
+  }
+
+  span{
+    transform: translateX(-148px)translateY(-24px);
+font-size: 62px;
+display: flex;
+justify-content: center;
+color: white;
+  }
+  .line{
+    height: 4px;
+background: white;
+width: 139px;
+/* rotate: 0deg; */
+position: relative;
+top: -176px;
+right: -172px;
+transform-origin: left;
+rotate: -91.4deg;  }
+
+.linee{
+    height: 4px;
+background: #0288ff;
+width: 122px;
+/* rotate: 0deg; */
+position: relative;
+top: -183px;
+right: -171.9px;
+transform-origin: left;
+rotate: -91.1deg;  }
+
+  .line2{
+    height: 4px;
+background: black;
+width: 105px;
+position: relative;
+top: -187px;
+right: -172px;
+transform-origin: left;
+rotate: -91deg;
+
+  }
+
+  @media screen and (max-width:372px){
+    .center{
+        width: 361px;
+display: flex;
+justify-content: center;
+align-items: center;
+    }
+  }
+  
+</style>
+<body>
+    <div class="center">
+    <div class="clock">
+        <div class="turn2">
+<p class="left single1">1</p>
+<p class="left single2">2</p>
+<p class="left single3">3 <span>.</span></p>
+
+<p class="left single4"> 4 </p>
+
+<p class="left single5">5</p>
+</div>
+<div class="line" id="lin"></div>
+<div class="linee" id="linee"></div>
+
+<div class="line2" id="line"></div>
+<div class="turn">
+<p class="single6">6</p>
+<p class="single7">7</p>
+<p class="single8">8</p>
+<p class="single9">9</p>
+<p class="single10">10</p>
+<p class="single11">11</p>
+<p class="single12">12</p>
+</div>
+    </div>
+</div>
+<button onclick="
+
+
+
+  function startClock() {
+    let currentDate = new Date();
+    let hours = currentDate.getHours();
+    let minutes = currentDate.getMinutes();
+    let seconds = currentDate.getSeconds();
+
+    let hourAngle = (hours % 12) * 30 + minutes * 0.5; // Calculate the angle for the hour hand
+    let minuteAngle = minutes * 6; // Calculate the angle for the minute hand
+    let secondAngle = seconds * 6; // Calculate the angle for the second hand
+
+    rotate.style.transform = `rotate(${secondAngle}deg)`;
+    rotate2.style.transform = `rotate(${hourAngle}deg)`;
+    rotate3.style.transform = `rotate(${minuteAngle}deg)`;
+  }
+
+  setInterval(startClock, 1000); // Update the clock every second
+">start</button>
+<button >stop</button>
+<script>
+
+let rotate=document.getElementById('lin')
+let rotate2=document.getElementById('line')
+let rotate3=document.getElementById('linee')
+let rot=0
+rot2=0
+rot3=0
+</script>
+
+</body>
+</html>
